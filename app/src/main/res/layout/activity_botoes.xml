@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".BotoesActivity">
+
+    <Button
+        android:id="@+id/btnBotao1"
+        android:layout_width="209dp"
+        android:layout_height="41dp"
+        android:text="BOTÃO 1"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnBotao2"
+        android:layout_width="209dp"
+        android:layout_height="41dp"
+        android:text="BOTÃO 2"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnBotao3"
+        android:layout_width="209dp"
+        android:layout_height="41dp"
+        android:text="BOTÃO 3"
+        android:backgroundTint="@color/pink"
+        android:textColor="@color/black"/>
+
+</LinearLayout>
