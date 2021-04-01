@@ -10,4 +10,7 @@
     <color name="yellow">#FFEB3B</color>
     <color name="blue">#03A9F4</color>
     <color name="pink">#E91E63</color>
+    <color name="azul">#5B102BBF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#102bbf</color>
 </resources>
