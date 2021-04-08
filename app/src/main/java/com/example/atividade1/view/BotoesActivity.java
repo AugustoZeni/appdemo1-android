@@ -1,8 +1,10 @@
-package com.example.atividade1;
+package com.example.atividade1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.atividade1.R;
 
 public class BotoesActivity extends AppCompatActivity {
 

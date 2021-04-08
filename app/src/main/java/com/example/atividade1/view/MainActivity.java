@@ -1,4 +1,4 @@
-package com.example.atividade1;
+package com.example.atividade1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.atividade1.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("usuario", txtUsuario.getText().toString());
+                        editor.putString("chavePix", "03591159000");
                         if(editor.commit()){
                             Intent tela = new Intent(context, MenuActivity.class);
                             startActivity(tela);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MenuActivity">
+    tools:context=".view.MenuActivity">
 
     <TextView
         android:id="@+id/lblUsuario_menu"
@@ -18,35 +18,45 @@
         android:textColor="@android:color/white"
         android:text="@string/text_login" />
 
-    <Button
-        android:id="@+id/btnBotoes"
-        android:layout_width="209dp"
-        android:layout_height="41dp"
-        android:gravity="center"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="250dp"
-        android:backgroundTint="@color/blue"
-        android:textColor="@color/black"
-        android:text="bOTÕES"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp"
+        android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/btnToast"
-        android:layout_width="209dp"
-        android:layout_height="41dp"
-        android:gravity="center"
-        android:layout_marginLeft="100dp"
-        android:backgroundTint="@color/yellow"
-        android:textColor="@color/black"
-        android:text="TOAST"/>
+        <Button
+            android:id="@+id/btnBotoes"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/black"
+            android:text="bOTÕES"/>
 
-    <Button
-        android:id="@+id/btnLogout_menu"
-        android:layout_width="209dp"
-        android:layout_height="41dp"
-        android:gravity="center"
-        android:layout_marginLeft="100dp"
-        android:backgroundTint="@color/pink"
-        android:textColor="@color/black"
-        android:text="@string/text_logout" />
+        <Button
+            android:id="@+id/btnToast"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/yellow"
+            android:textColor="@color/black"
+            android:text="TOAST"/>
 
+        <Button
+            android:id="@+id/btnPix"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/black"
+            android:text="PIX"/>
+
+        <Button
+            android:id="@+id/btnLogout_menu"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/pink"
+            android:textColor="@color/black"
+            android:text="@string/text_logout" />
+
+    </LinearLayout>
 </LinearLayout>

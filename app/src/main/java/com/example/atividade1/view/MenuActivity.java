@@ -1,4 +1,4 @@
-package com.example.atividade1;
+package com.example.atividade1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,9 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.atividade1.R;
+
 public class MenuActivity extends AppCompatActivity {
 
-    Button btnBotoes, btnToast, btnLogout;
+    Button btnBotoes, btnToast, btnLogout, btnPix;
     TextView lblUsuario;
 
     Context context;
@@ -28,6 +30,7 @@ public class MenuActivity extends AppCompatActivity {
         btnBotoes = findViewById(R.id.btnBotoes);
         btnToast = findViewById(R.id.btnToast);
         btnLogout = findViewById(R.id.btnLogout_menu);
+        btnPix = findViewById(R.id.btnPix);
         lblUsuario = findViewById(R.id.lblUsuario_menu);
 
         context = MenuActivity.this;
@@ -51,6 +54,14 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        btnPix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tela = new Intent(context, PixActivity.class);
+                startActivity(tela);
+            }
+        });
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +74,7 @@ public class MenuActivity extends AppCompatActivity {
                     finish();
 
                 }catch (Exception ex){
-                    Toast.makeText(context, "Erro", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
