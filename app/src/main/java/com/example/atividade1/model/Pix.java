@@ -2,9 +2,29 @@ package com.example.atividade1.model;
 
 public class Pix {
 
+    private String nome;
     private String chave;
     private float saldo;
     private float cheque_especial;
+
+    public Pix(){
+        
+    }
+
+    public Pix(String nome, String chave, float saldo, float cheque_especial){
+        this.nome = nome;
+        this.chave = chave;
+        this.saldo = saldo;
+        this.cheque_especial = cheque_especial;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getChave() {
         return chave;
@@ -32,7 +52,7 @@ public class Pix {
 
     @Override
     public String toString(){
-        return this.chave + "Chave: - R$ " +  this.saldo;
+        return this.nome + " - " +  this.chave;
     }
 
 }

@@ -1,8 +1,11 @@
 package com.example.atividade1.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.example.atividade1.adapters.AdapterPix;
+import com.example.atividade1.model.Pix;
 import com.example.atividade1.tools.Globais;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -24,7 +27,7 @@ public class ListaPixActivity extends AppCompatActivity {
     FloatingActionButton fabAdd;
     ListView listaContasView;
     Context context;
-    ArrayList<String> objLista;
+    ArrayList<Pix> objLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +43,23 @@ public class ListaPixActivity extends AppCompatActivity {
 
         objLista = new ArrayList<>();
 
+        Pix objeto = new Pix("Augusto", "035.911.590-00", 200, -2000);
+        objLista.add(objeto);
+        objeto = new Pix("Doga", "085.783.575-24", 600, -7000);
+        objLista.add(objeto);
+
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 try{
 
-                    objLista.add("Nove Item");
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, objLista);
+                    Pix objeto = new Pix("xxxxx", "xxx.xxx.xxx-xx", 200, -2000);
 
+                    objLista.add(objeto);
+
+                    //ArrayAdapter<Pix> adapter = new ArrayAdapter<Pix>(context, android.R.layout.simple_list_item_1, objLista);
+                    AdapterPix adapter = new AdapterPix(objLista, (Activity) context);
                     listaContasView.setAdapter(adapter);
 
                 }catch (Exception ex){
