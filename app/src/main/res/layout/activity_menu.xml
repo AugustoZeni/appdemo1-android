@@ -29,7 +29,6 @@
             android:id="@+id/btnBotoes"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:backgroundTint="@color/blue"
             android:textColor="@color/black"
             android:text="bOTÕES"/>
@@ -46,9 +45,17 @@
             android:id="@+id/btnPix"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="@color/pink"
             android:textColor="@color/black"
             android:text="PIX"/>
+
+        <Button
+            android:id="@+id/btnListaPix"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/black"
+            android:text="CONTAS PIX"/>
 
         <Button
             android:id="@+id/btnLogout_menu"

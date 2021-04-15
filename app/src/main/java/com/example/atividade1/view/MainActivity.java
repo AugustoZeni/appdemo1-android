@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("usuario", txtUsuario.getText().toString());
                         editor.putString("chavePix", "03591159000");
+                        editor.putFloat("saldoPix", 200);
                         if(editor.commit()){
                             Intent tela = new Intent(context, MenuActivity.class);
                             startActivity(tela);

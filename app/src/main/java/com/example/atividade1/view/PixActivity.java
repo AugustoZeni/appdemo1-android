@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.example.atividade1.R;
 import com.example.atividade1.model.Pix;
+import com.example.atividade1.tools.Globais;
+
+import java.text.NumberFormat;
 
 public class PixActivity extends AppCompatActivity {
 
@@ -33,7 +36,7 @@ public class PixActivity extends AppCompatActivity {
 
         contaPix = new Pix();
         contaPix.setChave(sharedPreferences.getString("chavePix",""));
-        float saldo = sharedPreferences.getFloat("valor",0);
+        float saldo = sharedPreferences.getFloat("saldoPix",0);
         contaPix.setSaldo(saldo);
         contaPix.setCheque_especial(-2500);
 
@@ -49,16 +52,28 @@ public class PixActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                float valor = Float.parseFloat(txtValor.getText().toString());
-                float saldo = contaPix.getSaldo() - valor;
-                float chequeEspecial = contaPix.getCheque_especial();
+                try{
+                    if(!txtValor.getText().toString().trim().equals("")) {
+                        float valor = Float.parseFloat(txtValor.getText().toString());
+                        float saldo = contaPix.getSaldo() - valor;
+                        float chequeEspecial = contaPix.getCheque_especial();
 
-                if(saldo > chequeEspecial) {
-                    contaPix.setSaldo(saldo);
-                    atualizarDados();
-                }else {
-                    exibirToast("Cheque especial ultrapassado, operação não será concluída");
-                    atualizarDados();
+                        if(valor > 0) {
+                            if (saldo > chequeEspecial) {
+                                contaPix.setSaldo(saldo);
+                                atualizarDados();
+                            } else {
+                                exibirToast("Cheque especial ultrapassado, operação não será concluída");
+                                atualizarDados();
+                            }
+                        }else{
+                            Globais.exibirMensagem(context, "Valor precisa ser maior que 0");
+                        }
+                    }else{
+                        Globais.exibirMensagem(context, "Informe um valor valido");
+                    }
+                }catch (Exception ex){
+                    Globais.exibirMensagem(context, ex.getMessage());
                 }
             }
         });
@@ -81,12 +96,15 @@ public class PixActivity extends AppCompatActivity {
     private void atualizarDados(){
         try{
 
-            lblSaldo.setText(String.valueOf(contaPix.getSaldo()));
+            NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
+            String testeValor = numberFormat.format(contaPix.getSaldo());
+
+            lblSaldo.setText(testeValor);
             lblChave.setText(contaPix.getChave());
             txtValor.setText("");
 
         }catch (Exception ex){
-
+            Globais.exibirMensagem(context, ex.getMessage());
         }
     }
 

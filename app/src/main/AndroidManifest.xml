@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Atividade1">
-        <activity android:name=".view.PixActivity"></activity>
+        <activity
+            android:name=".view.ListaPixActivity"
+            android:label="@string/title_activity_lista_pix"
+            android:theme="@style/Theme.Atividade1.NoActionBar"></activity>
+        <activity android:name=".view.PixActivity" />
         <activity android:name=".view.BotoesActivity" />
         <activity android:name=".view.MenuActivity" />
         <activity android:name=".view.MainActivity">

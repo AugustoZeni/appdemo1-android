@@ -15,7 +15,7 @@ import com.example.atividade1.R;
 
 public class MenuActivity extends AppCompatActivity {
 
-    Button btnBotoes, btnToast, btnLogout, btnPix;
+    Button btnBotoes, btnToast, btnLogout, btnPix, btnListaPix;
     TextView lblUsuario;
 
     Context context;
@@ -31,6 +31,7 @@ public class MenuActivity extends AppCompatActivity {
         btnToast = findViewById(R.id.btnToast);
         btnLogout = findViewById(R.id.btnLogout_menu);
         btnPix = findViewById(R.id.btnPix);
+        btnListaPix = findViewById(R.id.btnListaPix);
         lblUsuario = findViewById(R.id.lblUsuario_menu);
 
         context = MenuActivity.this;
@@ -58,6 +59,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent tela = new Intent(context, PixActivity.class);
+                startActivity(tela);
+            }
+        });
+
+        btnListaPix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tela = new Intent(context, ListaPixActivity.class);
                 startActivity(tela);
             }
         });
